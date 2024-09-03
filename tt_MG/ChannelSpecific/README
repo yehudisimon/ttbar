@@ -1,0 +1,20 @@
+./RUN "p p > seL- seL+" 7000 400 input/sps1ap.in "tot" 1 1
+  - The first argument is the process under consideration given as a string. 
+    For the initial state, the allowed choices are p (proton) and pb (antiproton).
+    For the final state, the allowed choices are seL-, smuL-, stau1-, snue,
+snumu, etc...
+  - The second argument is the center-of-mass energy in GeV.
+  - The third argument is the pdfset to be used at NLO/NLL. 
+    In the case of LO, we do not care. < 1000 = CTEQ; > 1000 = MSTW;
+  - The fourth argument is the path to the SLHA input file
+  - The fifth argument is a string related to the calculation to perform. The
+    allowed choices are "tot" (total cross section), "pt = val" (dsigma/dpt at
+    pt = val) and "M = val" (dsigma/dM at M - val). For the moment, only "tot"
+    does return a result.
+  - The last two arguments are the scale factors. For total cross section, the
+    central scales are taken as the average final mass.
+
+
+Be careful : fortran doesn't differentiate CAPS while C++ does. When calling a Fortran routine in C++, the name must be written in lower caps.
+Be careful of the phase space! Some points may be unstable numerically. To test phase space stability, you can try to think about power counting (A ~ m^a: m->10*m -> A->A*10^a), using symmetries of the variables, shift the integrand if possible, change order of propagators...
+Use precise phase space points to cross check against external code (be careful of the precision displayed and actual numerical precision).

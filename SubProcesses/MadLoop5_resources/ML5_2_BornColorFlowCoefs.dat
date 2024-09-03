@@ -1,0 +1,9 @@
+2 # Coefficient for flow number 1 with expr. 1 T(1,2,3,4)
+     1     -1
+    -1      1
+     1      2
+2 # Coefficient for flow number 2 with expr. 1 T(2,1,3,4)
+    -1     -1
+    -1      1
+     1      3
+EOF

@@ -1,0 +1,8 @@
+Update alpha_s : 
+coupl.inc G strong definition-> change it once loaded
+run alphaupdate_as_param_()
+
+Or:
+write a warp (subroutine in fortran to call in c++)
+load the coupl.inc 
+update  alpha_s

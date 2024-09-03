@@ -1,0 +1,24 @@
+FC=gfortran
+
+FFLAGS=-w -fno-automatic -ffixed-line-length-132
+objects=Func_PSI.o use_func.o hardfuncs.o
+
+all: libHFgg2ttx.a
+
+libHFgg2ttx.a: $(objects)
+	@rm -rf libHFgg2ttx.a
+	@ar cr libHFgg2ttx.a $(objects)
+	@rm *.o
+
+%.o : %.f
+	$(FC) $(FFLAGS) -c $< -o $@ -lstdc++
+
+
+use_func.o use_func.mod: use_func.f90
+	$(FC) $(FFLAGS) -c $<
+
+Func_PSI.o Func_PSI.mod: Func_PSI.f90 use_func.mod
+	$(FC) $(FFLAGS) -c $<
+
+clean:
+	rm *.o *~ *.mod libHFgg2ttx.a check

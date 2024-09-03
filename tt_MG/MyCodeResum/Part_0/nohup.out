@@ -1,0 +1,837 @@
+ ** INFO: Initializing the collision setup.
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+Performing PDF fit with 5 flavors, Q^2 = mu_F^2 = 53306.7
+ and weights: valence: x^-1.6, sea: x^-1.6, gluon: x^-1.6 and xmin = 0.00329832 
+ Fit function: f = A0 * x^A1 * (1 - x)^A2 * ( 1 + A3 * x^(1/2) + A4 * x + A5 * x^(3/2) + A6 * x^2 + A7 * x^(5/2) )
+Fitting gluon PDF...LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+34.0376
+ done.
+Fit result:
+A0 =  1.58559 # +-0.28183
+A1 =  -1.46521 # +-0.00177
+A2 =  1.14378 # +-249.72441
+A3 =  -4.59489 # +-4.28019
+A4 =  8.86851 # +-42.52363
+A5 =  -8.81833 # +-437.96860
+A6 =  4.23582 # +-707.52827
+A7 =  -0.67059 # +-140.37585
+Fitting valence down quark PDF...#chisq/dof = 2.17895e-06
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+26.7893
+ done.
+Fit result:
+A0 =  0.12757 # +-3.62535
+A1 =  -1.37716 # +-3.14503
+A2 =  6.36297 # +-628.76083
+A3 =  -0.49240 # +-13143.01983
+A4 =  10.49683 # +-461420.41797
+A5 =  30.92472 # +-11596034.88446
+A6 =  -87.89542 # +-40701253.51366
+A7 =  95.45326 # +-30556618.34710
+Fitting valence up quark PDF...#chisq/dof = 9.66987e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+147.118
+ done.
+Fit result:
+A0 =  0.02437 # +-1.55382
+A1 =  -1.57373 # +-30.39593
+A2 =  4.19368 # +-52608.88367
+A3 =  13.08131 # +-389858.71884
+A4 =  3.64727 # +-1000258.81435
+A5 =  159.77677 # +-62756867.09020
+A6 =  -17.56116 # +-96155634.36386
+A7 =  -100.60170 # +-844505434.74547
+Fitting sea down quark PDF...#chisq/dof = 4.23073e-07
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+52.2987
+ done.
+Fit result:
+A0 =  0.06035 # +-26.62695
+A1 =  -1.46246 # +-86.31080
+A2 =  11.71278 # +-5644.70110
+A3 =  6.46813 # +-999944.59318
+A4 =  -56.75849 # +-45863987.30100
+A5 =  299.26018 # +-908056538.43289
+A6 =  -638.62311 # +-3675168500.74684
+A7 =  540.29709 # +-2574603096.96371
+Fitting strange quark PDF...#chisq/dof = 5.01781e-09
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+25.1372
+ done.
+Fit result:
+A0 =  0.11056 # +-0.07087
+A1 =  -1.40436 # +-0.10190
+A2 =  -0.53721 # +-1587.55836
+A3 =  -3.80006 # +-146.21574
+A4 =  3.62258 # +-3028.77534
+A5 =  2.41935 # +-14879.81127
+A6 =  -5.54164 # +-17005.35546
+A7 =  2.29992 # +-2566.78312
+Fitting bottom quark PDF...#chisq/dof = 3.82269e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+25.5283
+ done.
+Fit result:
+A0 =  0.06825 # +-1.32380
+A1 =  -1.42672 # +-4.30820
+A2 =  3.10947 # +-792916.32225
+A3 =  -5.65891 # +-12472.10334
+A4 =  14.18145 # +-118749.51623
+A5 =  -18.79939 # +-1011888.22219
+A6 =  12.49188 # +-2443549.89145
+A7 =  -3.16068 # +-771829.15380
+Fitting sea up quark PDF...#chisq/dof = 3.12425e-10
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+27.8415
+ done.
+Fit result:
+A0 =  0.11170 # +-29.10474
+A1 =  -1.40332 # +-29.80821
+A2 =  9.75752 # +-14620287.52218
+A3 =  -2.03676 # +-203502.74845
+A4 =  12.09742 # +-653944.58483
+A5 =  -44.57129 # +-404536687.62600
+A6 =  84.92166 # +-3747031196.00179
+A7 =  -49.16828 # +-6940967469.91204
+Fitting charm quark PDF...#chisq/dof = 1.94068e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+22.9217
+ done.
+Fit result:
+A0 =  0.10450 # +-2.44115
+A1 =  -1.39691 # +-3.32516
+A2 =  6.29736 # +-5008789.81958
+A3 =  -4.39218 # +-10565.14560
+A4 =  7.83402 # +-2392125.66330
+A5 =  -3.59453 # +-46439607.29297
+A6 =  -4.54369 # +-149326422.31611
+A7 =  3.94047 # +-56244191.11974
+#chisq/dof = 2.00012e-10
+#status = success
+Resummed done 
+Born done 
+Expanded done 
+Resummed done 
+Born done 
+Expanded done 
+Performing PDF fit with 5 flavors, Q^2 = mu_F^2 = 213227
+ and weights: valence: x^-1.6, sea: x^-1.6, gluon: x^-1.6 and xmin = 0.00329832 
+ Fit function: f = A0 * x^A1 * (1 - x)^A2 * ( 1 + A3 * x^(1/2) + A4 * x + A5 * x^(3/2) + A6 * x^2 + A7 * x^(5/2) )
+Fitting gluon PDF...LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+36.9261
+ done.
+Fit result:
+A0 =  1.53090 # +-0.31869
+A1 =  -1.48307 # +-0.00212
+A2 =  -0.05665 # +-368.23727
+A3 =  -4.99757 # +-5.36133
+A4 =  10.41132 # +-12.57293
+A5 =  -11.44282 # +-278.28812
+A6 =  6.66185 # +-613.48872
+A7 =  -1.63304 # +-112.97651
+Fitting valence down quark PDF...#chisq/dof = 2.04258e-06
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+29.2541
+ done.
+Fit result:
+A0 =  0.12362 # +-3.07375
+A1 =  -1.39530 # +-2.85254
+A2 =  6.42322 # +-783.46207
+A3 =  -0.85986 # +-11552.81671
+A4 =  12.66170 # +-418252.92036
+A5 =  22.08899 # +-10708909.25451
+A6 =  -73.46332 # +-38093776.16703
+A7 =  84.76339 # +-29329576.95698
+Fitting valence up quark PDF...#chisq/dof = 8.07967e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+128.724
+ done.
+Fit result:
+A0 =  0.02944 # +-1.31804
+A1 =  -1.56718 # +-18.22802
+A2 =  4.24776 # +-60105.70295
+A3 =  10.27459 # +-194244.26105
+A4 =  3.98803 # +-1397788.75934
+A5 =  140.75103 # +-47382999.57512
+A6 =  -57.67152 # +-195218568.87665
+A7 =  -53.32061 # +-333411782.89397
+Fitting sea down quark PDF...#chisq/dof = 3.55643e-07
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+47.0555
+ done.
+Fit result:
+A0 =  0.07111 # +-16.03460
+A1 =  -1.45917 # +-39.10553
+A2 =  11.85153 # +-8091.38809
+A3 =  3.92334 # +-353046.84165
+A4 =  -39.62313 # +-17473581.76706
+A5 =  225.28748 # +-359637929.87036
+A6 =  -495.04718 # +-1515035195.97505
+A7 =  427.85072 # +-1124894747.91578
+Fitting strange quark PDF...#chisq/dof = 4.8248e-09
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+27.0114
+ done.
+Fit result:
+A0 =  0.10989 # +-0.06575
+A1 =  -1.41872 # +-0.09544
+A2 =  -0.54440 # +-1629.86576
+A3 =  -3.98522 # +-138.11653
+A4 =  4.49706 # +-2762.64026
+A5 =  0.87833 # +-13109.81953
+A6 =  -4.34104 # +-14911.85677
+A7 =  1.95100 # +-2264.37907
+Fitting bottom quark PDF...#chisq/dof = 3.56164e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+27.2632
+ done.
+Fit result:
+A0 =  0.07167 # +-1.29811
+A1 =  -1.43987 # +-3.82208
+A2 =  2.67486 # +-698397.61234
+A3 =  -5.83875 # +-11176.55644
+A4 =  15.09502 # +-96385.09107
+A5 =  -20.92486 # +-607114.40748
+A6 =  14.94788 # +-1390278.80071
+A7 =  -4.26141 # +-415116.01443
+Fitting sea up quark PDF...#chisq/dof = 3.73782e-10
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+30.2631
+ done.
+Fit result:
+A0 =  0.10897 # +-25.96668
+A1 =  -1.41963 # +-27.93144
+A2 =  9.87272 # +-15518840.89303
+A3 =  -2.19634 # +-190950.19029
+A4 =  12.22660 # +-491936.64539
+A5 =  -43.52377 # +-359422446.61388
+A6 =  82.21615 # +-3417493090.04455
+A7 =  -47.68520 # +-6552722617.54683
+Fitting charm quark PDF...#chisq/dof = 1.80151e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+24.9048
+ done.
+Fit result:
+A0 =  0.10407 # +-2.15728
+A1 =  -1.41290 # +-2.95837
+A2 =  6.03102 # +-2962287.61291
+A3 =  -4.55424 # +-9470.16369
+A4 =  8.58509 # +-1107869.79760
+A5 =  -5.18794 # +-22928013.29386
+A6 =  -3.18271 # +-74775653.54185
+A7 =  3.58698 # +-29465967.98460
+#chisq/dof = 2.43808e-10
+#status = success
+Resummed done 
+Born done 
+Expanded done 
+Resummed done 
+Born done 
+Expanded done 
+Resummed done 
+Born done 
+Expanded done 
+Performing PDF fit with 5 flavors, Q^2 = mu_F^2 = 852908
+ and weights: valence: x^-1.6, sea: x^-1.6, gluon: x^-1.6 and xmin = 0.00329832 
+ Fit function: f = A0 * x^A1 * (1 - x)^A2 * ( 1 + A3 * x^(1/2) + A4 * x + A5 * x^(3/2) + A6 * x^2 + A7 * x^(5/2) )
+Fitting gluon PDF...LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+40.0446
+ done.
+Fit result:
+A0 =  1.46528 # +-6.15025
+A1 =  -1.49961 # +-0.03805
+A2 =  8.37803 # +-38970.34243
+A3 =  -5.19475 # +-211.84134
+A4 =  18.70101 # +-1678.50393
+A5 =  -41.50843 # +-17849.74025
+A6 =  54.10140 # +-195425.32066
+A7 =  -27.52768 # +-693369.17910
+Fitting valence down quark PDF...#chisq/dof = 1.38327e-06
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+31.6207
+ done.
+Fit result:
+A0 =  0.12006 # +-2.66248
+A1 =  -1.41136 # +-2.62963
+A2 =  6.47455 # +-966.62394
+A3 =  -1.18493 # +-10365.55746
+A4 =  14.61681 # +-385245.53538
+A5 =  14.06123 # +-10046898.63592
+A6 =  -60.30613 # +-36119961.49082
+A7 =  74.95004 # +-28474755.18579
+Fitting valence up quark PDF...#chisq/dof = 6.80998e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+118.777
+ done.
+Fit result:
+A0 =  0.03347 # +-1.14467
+A1 =  -1.56533 # +-12.52209
+A2 =  4.29534 # +-69126.38258
+A3 =  8.33208 # +-117116.05287
+A4 =  5.53316 # +-1502299.90964
+A5 =  124.71855 # +-38922393.91512
+A6 =  -75.44229 # +-264214585.16188
+A7 =  -27.76206 # +-149259779.06369
+Fitting sea down quark PDF...#chisq/dof = 3.04644e-07
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+45.9546
+ done.
+Fit result:
+A0 =  0.07655 # +-12.25446
+A1 =  -1.46373 # +-26.39218
+A2 =  11.96311 # +-10193.82653
+A3 =  2.55187 # +-207944.61070
+A4 =  -30.19222 # +-10765323.60990
+A5 =  184.63592 # +-228165396.20360
+A6 =  -416.28680 # +-988283291.34925
+A7 =  366.63099 # +-763633695.75227
+Fitting strange quark PDF...#chisq/dof = 4.54819e-09
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+28.9336
+ done.
+Fit result:
+A0 =  0.10852 # +-0.06125
+A1 =  -1.43218 # +-0.09094
+A2 =  -0.55371 # +-1664.69278
+A3 =  -4.13340 # +-132.98258
+A4 =  5.19600 # +-2596.00099
+A5 =  -0.35213 # +-11908.15170
+A6 =  -3.38304 # +-13421.05083
+A7 =  1.67269 # +-2043.29185
+Fitting bottom quark PDF...#chisq/dof = 3.3724e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+28.8948
+ done.
+Fit result:
+A0 =  0.07425 # +-1.32466
+A1 =  -1.45159 # +-3.62343
+A2 =  2.10735 # +-672816.18915
+A3 =  -6.01256 # +-10714.80064
+A4 =  15.91163 # +-82738.57413
+A5 =  -22.68587 # +-339252.33982
+A6 =  16.90028 # +-752155.06534
+A7 =  -5.12491 # +-211121.97121
+Fitting sea up quark PDF...#chisq/dof = 4.5577e-10
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+32.6741
+ done.
+Fit result:
+A0 =  0.10613 # +-23.52091
+A1 =  -1.43451 # +-26.65760
+A2 =  9.98045 # +-16383493.36469
+A3 =  -2.33346 # +-182502.74322
+A4 =  12.38937 # +-413040.58148
+A5 =  -42.84666 # +-325864787.38688
+A6 =  80.26909 # +-3170413717.42493
+A7 =  -46.61567 # +-6269426725.57256
+Fitting charm quark PDF...#chisq/dof = 1.67691e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+26.8126
+ done.
+Fit result:
+A0 =  0.10331 # +-1.89502
+A1 =  -1.42716 # +-2.63687
+A2 =  5.76889 # +-1896946.78604
+A3 =  -4.70339 # +-8444.40105
+A4 =  9.29141 # +-557281.50673
+A5 =  -6.74580 # +-12138993.33320
+A6 =  -1.72056 # +-39739328.52422
+A7 =  3.13197 # +-16056016.40098
+#chisq/dof = 3.04634e-10
+#status = success
+Resummed done 
+Born done 
+Expanded done 
+Resummed done 
+Born done 
+Expanded done 
+ Step n ° 1 over 2
+ Duration : 683.982
+Performing PDF fit with 5 flavors, Q^2 = mu_F^2 = 120581
+ and weights: valence: x^-1.6, sea: x^-1.6, gluon: x^-1.6 and xmin = 0.00496068 
+ Fit function: f = A0 * x^A1 * (1 - x)^A2 * ( 1 + A3 * x^(1/2) + A4 * x + A5 * x^(3/2) + A6 * x^2 + A7 * x^(5/2) )
+Fitting gluon PDF...LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+27.2197
+ done.
+Fit result:
+A0 =  1.44824 # +-23.84895
+A1 =  -1.48499 # +-0.16120
+A2 =  7.27615 # +-160537.56193
+A3 =  -4.41430 # +-692.09805
+A4 =  12.83442 # +-19307.46013
+A5 =  -23.54552 # +-79953.64418
+A6 =  27.31296 # +-72056.49565
+A7 =  -13.06891 # +-482948.35350
+Fitting valence down quark PDF...#chisq/dof = 3.86078e-07
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+13.8511
+ done.
+Fit result:
+A0 =  0.20133 # +-14.05307
+A1 =  -1.32835 # +-5.53765
+A2 =  5.39355 # +-44843.33109
+A3 =  -3.66166 # +-12715.77089
+A4 =  27.64065 # +-324986.79668
+A5 =  -52.04490 # +-10698989.27242
+A6 =  55.87356 # +-21997873.59317
+A7 =  -23.20284 # +-20663580.46766
+Fitting valence up quark PDF...#chisq/dof = 3.91901e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+364.702
+ done.
+Fit result:
+A0 =  0.00815 # +-124.93520
+A1 =  -1.69931 # +-18521.81431
+A2 =  4.23540 # +-53780.96321
+A3 =  27.81216 # +-616652257.55351
+A4 =  15.49703 # +-1644753109.38972
+A5 =  323.79291 # +-57677503327.28349
+A6 =  211.42158 # +-417677592141.18500
+A7 =  -411.48253 # +-542001429308.55707
+Fitting sea down quark PDF...#chisq/dof = 3.21183e-07
+#status = exceeded max number of iterations
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+25.1627
+ done.
+Fit result:
+A0 =  0.09901 # +-75.17072
+A1 =  -1.41525 # +-104.64300
+A2 =  11.61026 # +-12953.62665
+A3 =  1.10869 # +-582591.95494
+A4 =  -20.30291 # +-28594679.30292
+A5 =  140.68448 # +-551923546.08440
+A6 =  -325.80991 # +-2204992076.64880
+A7 =  287.03859 # +-1512123299.97154
+Fitting strange quark PDF...#chisq/dof = 4.52357e-09
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+19.1021
+ done.
+Fit result:
+A0 =  0.11151 # +-2.35951
+A1 =  -1.41179 # +-2.95719
+A2 =  3.81866 # +-2697493.35583
+A3 =  -3.99932 # +-8935.52941
+A4 =  8.98511 # +-818990.13472
+A5 =  -15.12933 # +-5691508.61044
+A6 =  15.17975 # +-3418751.85358
+A7 =  -6.17294 # +-705837.54898
+Fitting bottom quark PDF...#chisq/dof = 8.69233e-10
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+19.6274
+ done.
+Fit result:
+A0 =  0.06768 # +-6.54935
+A1 =  -1.43968 # +-22.94320
+A2 =  4.06489 # +-2861021.53987
+A3 =  -5.54094 # +-54083.88804
+A4 =  13.89918 # +-489478.29448
+A5 =  -18.46573 # +-3219654.09952
+A6 =  12.16166 # +-7469710.22178
+A7 =  -2.99317 # +-2545255.85649
+Fitting sea up quark PDF...#chisq/dof = 1.13051e-10
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+28.5276
+ done.
+Fit result:
+A0 =  0.08527 # +-129.97733
+A1 =  -1.44515 # +-236.36622
+A2 =  9.27057 # +-151771532.28868
+A3 =  -0.50829 # +-1444360.11005
+A4 =  3.14096 # +-7603806.59302
+A5 =  -18.70802 # +-2466029872.86316
+A6 =  47.44368 # +-25258386894.82227
+A7 =  -29.32895 # +-50998198300.88866
+Fitting charm quark PDF...#chisq/dof = 7.82467e-09
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+17.9268
+ done.
+Fit result:
+A0 =  0.10195 # +-16.02105
+A1 =  -1.40945 # +-23.90919
+A2 =  7.45632 # +-19304299.72185
+A3 =  -4.35134 # +-66465.70655
+A4 =  8.47126 # +-6270433.52709
+A5 =  -6.13780 # +-113578539.43594
+A6 =  -0.28730 # +-357933826.00079
+A7 =  1.68836 # +-97082914.14854
+#chisq/dof = 1.28694e-10
+#status = success
+Resummed done 
+Born done 
+Expanded done 
+Resummed done 
+Born done 
+Expanded done 
+Performing PDF fit with 5 flavors, Q^2 = mu_F^2 = 482323
+ and weights: valence: x^-1.6, sea: x^-1.6, gluon: x^-1.6 and xmin = 0.00496068 
+ Fit function: f = A0 * x^A1 * (1 - x)^A2 * ( 1 + A3 * x^(1/2) + A4 * x + A5 * x^(3/2) + A6 * x^2 + A7 * x^(5/2) )
+Fitting gluon PDF...LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+29.5987
+ done.
+Fit result:
+A0 =  1.37273 # +-22.64810
+A1 =  -1.50382 # +-0.17042
+A2 =  7.50823 # +-143400.38117
+A3 =  -4.65398 # +-728.18373
+A4 =  14.23014 # +-11601.16547
+A5 =  -26.97584 # +-46205.46843
+A6 =  31.37678 # +-74432.40790
+A7 =  -14.96039 # +-514428.09536
+Fitting valence down quark PDF...#chisq/dof = 4.02611e-07
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+15.6657
+ done.
+Fit result:
+A0 =  0.18577 # +-12.70174
+A1 =  -1.35151 # +-5.85139
+A2 =  5.45992 # +-51830.29323
+A3 =  -3.67549 # +-13721.88197
+A4 =  27.99263 # +-351065.44766
+A5 =  -52.81660 # +-11911227.68842
+A6 =  56.51933 # +-24177415.95543
+A7 =  -23.41768 # +-23032405.50870
+Fitting valence up quark PDF...#chisq/dof = 3.28888e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+240.79
+ done.
+Fit result:
+A0 =  0.01287 # +-33.61085
+A1 =  -1.66613 # +-2191.86772
+A2 =  4.29061 # +-58982.90564
+A3 =  19.62879 # +-43815170.84885
+A4 =  1.46803 # +-1236570.62993
+A5 =  271.30954 # +-7645741497.76646
+A6 =  -28.49999 # +-2880624202.68592
+A7 =  -165.46214 # +-18080892357.50651
+Fitting sea down quark PDF...#chisq/dof = 2.56636e-07
+#status = exceeded max number of iterations
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+25.4929
+ done.
+Fit result:
+A0 =  0.10216 # +-59.18557
+A1 =  -1.42502 # +-78.79546
+A2 =  11.67943 # +-16587.91247
+A3 =  0.24403 # +-394827.69685
+A4 =  -14.14009 # +-19824100.25695
+A5 =  113.94948 # +-388523718.00421
+A6 =  -273.95891 # +-1576047995.11397
+A7 =  247.03231 # +-1107625688.23218
+Fitting strange quark PDF...#chisq/dof = 4.0579e-09
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+20.4647
+ done.
+Fit result:
+A0 =  0.10967 # +-2.50137
+A1 =  -1.42639 # +-3.20544
+A2 =  3.92883 # +-2859227.78805
+A3 =  -4.11674 # +-10076.17585
+A4 =  9.49150 # +-773454.34061
+A5 =  -16.00920 # +-5715292.66669
+A6 =  15.95001 # +-3730861.11584
+A7 =  -6.46768 # +-726815.15780
+Fitting bottom quark PDF...#chisq/dof = 8.76935e-10
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+20.8013
+ done.
+Fit result:
+A0 =  0.07020 # +-6.39484
+A1 =  -1.45243 # +-20.78271
+A2 =  3.77286 # +-2543308.68429
+A3 =  -5.69207 # +-49393.11479
+A4 =  14.68798 # +-451354.59764
+A5 =  -20.37036 # +-2377631.26253
+A6 =  14.38949 # +-4997891.18451
+A7 =  -3.98236 # +-1590946.76578
+Fitting sea up quark PDF...#chisq/dof = 1.37628e-10
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+30.2734
+ done.
+Fit result:
+A0 =  0.08406 # +-117.16151
+A1 =  -1.45915 # +-219.49890
+A2 =  9.35867 # +-167259043.53231
+A3 =  -0.73113 # +-1331184.56813
+A4 =  3.43934 # +-12315291.63679
+A5 =  -17.81047 # +-2081092897.49266
+A6 =  44.45356 # +-22496164125.83987
+A7 =  -27.52312 # +-47734871076.67851
+Fitting charm quark PDF...#chisq/dof = 7.10307e-09
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+19.2608
+ done.
+Fit result:
+A0 =  0.10111 # +-14.28273
+A1 =  -1.42465 # +-21.66201
+A2 =  7.16194 # +-16860412.81100
+A3 =  -4.49376 # +-60300.09755
+A4 =  9.05162 # +-5038815.07852
+A5 =  -7.27501 # +-99829305.98557
+A6 =  0.49120 # +-333292952.51946
+A7 =  1.48037 # +-110781970.10035
+#chisq/dof = 1.48841e-10
+#status = success
+Resummed done 
+Born done 
+Expanded done 
+Resummed done 
+Born done 
+Expanded done 
+Resummed done 
+Born done 
+Expanded done 
+Performing PDF fit with 5 flavors, Q^2 = mu_F^2 = 1.92929e+06
+ and weights: valence: x^-1.6, sea: x^-1.6, gluon: x^-1.6 and xmin = 0.00496068 
+ Fit function: f = A0 * x^A1 * (1 - x)^A2 * ( 1 + A3 * x^(1/2) + A4 * x + A5 * x^(3/2) + A6 * x^2 + A7 * x^(5/2) )
+Fitting gluon PDF...LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+31.9126
+ done.
+Fit result:
+A0 =  1.30370 # +-21.93327
+A1 =  -1.52065 # +-0.18294
+A2 =  7.74007 # +-134323.89124
+A3 =  -4.86187 # +-779.78706
+A4 =  15.49713 # +-7202.71915
+A5 =  -30.22527 # +-31404.28644
+A6 =  35.41449 # +-104949.05961
+A7 =  -16.90060 # +-607464.10770
+Fitting valence down quark PDF...#chisq/dof = 4.24457e-07
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+17.4345
+ done.
+Fit result:
+A0 =  0.17316 # +-11.96015
+A1 =  -1.37180 # +-6.30757
+A2 =  5.51173 # +-64718.88995
+A3 =  -3.70463 # +-15169.90947
+A4 =  28.40349 # +-384886.82951
+A5 =  -53.92826 # +-13635905.40918
+A6 =  57.68245 # +-26837258.68333
+A7 =  -24.01011 # +-26152885.94761
+Fitting valence up quark PDF...#chisq/dof = 2.77867e-08
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+216.01
+ done.
+Fit result:
+A0 =  0.01488 # +-22.68152
+A1 =  -1.66291 # +-1144.21252
+A2 =  4.33577 # +-64496.51771
+A3 =  16.84444 # +-19015462.88134
+A4 =  -1.35832 # +-7762801.07966
+A5 =  257.38064 # +-4413136234.13380
+A6 =  -101.74946 # +-312955038.80732
+A7 =  -92.32553 # +-5160290204.42204
+Fitting sea down quark PDF...#chisq/dof = 2.05962e-07
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+26.135
+ done.
+Fit result:
+A0 =  0.10352 # +-49.26921
+A1 =  -1.43525 # +-64.71835
+A2 =  11.73856 # +-20481.09587
+A3 =  -0.39108 # +-300418.21040
+A4 =  -9.56953 # +-15342329.26434
+A5 =  94.07674 # +-305070550.82458
+A6 =  -235.35196 # +-1253878432.39122
+A7 =  217.21465 # +-899888074.95092
+Fitting strange quark PDF...#chisq/dof = 3.636e-09
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+21.8133
+ done.
+Fit result:
+A0 =  0.10758 # +-2.69547
+A1 =  -1.43981 # +-3.55540
+A2 =  4.08022 # +-3102080.85398
+A3 =  -4.21750 # +-11564.99647
+A4 =  9.98640 # +-751445.61009
+A5 =  -16.97194 # +-5783838.84126
+A6 =  16.87214 # +-4072887.34089
+A7 =  -6.84228 # +-796473.88307
+Fitting bottom quark PDF...#chisq/dof = 8.97635e-10
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+21.9035
+ done.
+Fit result:
+A0 =  0.07206 # +-6.41253
+A1 =  -1.46386 # +-19.73958
+A2 =  3.40640 # +-2408807.04330
+A3 =  -5.83721 # +-47293.49273
+A4 =  15.41222 # +-432388.06862
+A5 =  -22.07260 # +-1790200.20217
+A6 =  16.37939 # +-3374065.51962
+A7 =  -4.87732 # +-1004594.21907
+Fitting sea up quark PDF...#chisq/dof = 1.62583e-10
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+31.9877
+ done.
+Fit result:
+A0 =  0.08269 # +-106.35340
+A1 =  -1.47199 # +-206.13494
+A2 =  9.44253 # +-178952557.40313
+A3 =  -0.92704 # +-1241614.54273
+A4 =  3.77834 # +-16743390.20768
+A5 =  -17.35027 # +-1762866282.68805
+A6 =  42.37230 # +-20012507678.12215
+A7 =  -26.22379 # +-44411370707.26456
+Fitting charm quark PDF...#chisq/dof = 6.51785e-09
+#status = success
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/CT18NLO/CT18NLO_0000.dat
+CT18NLO PDF set, member #0, version 1; LHAPDF ID = 14400
+PDF chosen : 0
+20.5532
+ done.
+Fit result:
+A0 =  0.09997 # +-12.59949
+A1 =  -1.43837 # +-19.56436
+A2 =  6.91399 # +-12808926.11085
+A3 =  -4.62021 # +-54191.10450
+A4 =  9.59230 # +-3237134.27356
+A5 =  -8.37656 # +-69248833.09714
+A6 =  1.32294 # +-239314870.19880
+A7 =  1.28032 # +-88494075.10376
+#chisq/dof = 1.70173e-10
+#status = success
+Resummed done 
+Born done 
+Expanded done 
+Resummed done 
+Born done 
+Expanded done 
+ Step n ° 2 over 2
+ Duration : 1288.8
+Thanks for using LHAPDF 6.4.0. Please make sure to cite the paper:
+  Eur.Phys.J. C75 (2015) 3, 132  (http://arxiv.org/abs/1412.7420)

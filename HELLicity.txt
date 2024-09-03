@@ -1,0 +1,1 @@
+When compiling and running my complete code (with integration etc.) it seems that the file ML5_2_HelFilter.dat is corrupted for some reason. It causes multiple calling of the sloop_matrix subroutine to return 0 systematically. It can be fixed by setting HelicityFilterLevel to 0 (instead of 2) in the MadLoopParams.dat file.

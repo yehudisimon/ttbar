@@ -1,0 +1,40 @@
+ MadLoop parameter passed 
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/MSTW2008nnlo68cl/MSTW2008nnlo68cl_0000.dat
+MSTW2008nnlo68cl PDF set, member #0, version 3; LHAPDF ID = 21200
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/MSTW2008nnlo68cl/MSTW2008nnlo68cl_0000.dat
+MSTW2008nnlo68cl PDF set, member #0, version 3; LHAPDF ID = 21200
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/MSTW2008nnlo68cl/MSTW2008nnlo68cl_0000.dat
+MSTW2008nnlo68cl PDF set, member #0, version 3; LHAPDF ID = 21200
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/MSTW2008nnlo68cl/MSTW2008nnlo68cl_0000.dat
+MSTW2008nnlo68cl PDF set, member #0, version 3; LHAPDF ID = 21200
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/MSTW2008nnlo68cl/MSTW2008nnlo68cl_0000.dat
+MSTW2008nnlo68cl PDF set, member #0, version 3; LHAPDF ID = 21200
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/MSTW2008nnlo68cl/MSTW2008nnlo68cl_0000.dat
+MSTW2008nnlo68cl PDF set, member #0, version 3; LHAPDF ID = 21200
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/MSTW2008nnlo68cl/MSTW2008nnlo68cl_0000.dat
+MSTW2008nnlo68cl PDF set, member #0, version 3; LHAPDF ID = 21200
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/MSTW2008nnlo68cl/MSTW2008nnlo68cl_0000.dat
+MSTW2008nnlo68cl PDF set, member #0, version 3; LHAPDF ID = 21200
+LHAPDF 6.4.0 loading /home/yehudi/LHAPDF6/share/LHAPDF/MSTW2008nnlo68cl/MSTW2008nnlo68cl_0000.dat
+MSTW2008nnlo68cl PDF set, member #0, version 3; LHAPDF ID = 21200
+Born done 
+ Rdag = (1.047504663,-0.01707747206) R = (1.047504663,0.01707747206) n = 0 i = 0
+ Rdag = (-0.02549923211,-0.0938995108) R = (0.07796552777,-0.2904597819) n = 0 i = 1
+ Rdag = (0.02159727365,0.0896141082) R = (-0.05747206882,-0.03300018236) n = 0 i = 2
+ Rdag = (0.07796552777,0.2904597819) R = (-0.02549923211,0.0938995108) n = 1 i = 0
+ Rdag = (0.6450021863,-0.1168965846) R = (0.6450021863,0.1168965846) n = 1 i = 1
+ Rdag = (-0.6640648246,-0.1091337055) R = (0.8886527419,0.04147132859) n = 1 i = 2
+ Rdag = (-0.05747206882,0.03300018236) R = (0.02159727365,-0.0896141082) n = 2 i = 0
+ Rdag = (0.8886527419,-0.04147132859) R = (-0.6640648246,0.1091337055) n = 2 i = 1
+ Rdag = (0.8595647812,0.04293099791) R = (0.8595647812,-0.04293099791) n = 2 i = 2
+ Diag = (-1.861102621,-8.536004433) k = 0 l = 0 M2 = 194248.8093 t = (-157448.3578,0)
+ Diag = (8.952442572e-07,-1.124198212e-07) k = 0 l = 1 M2 = 194248.8093 t = (-157448.3578,0)
+ Diag = (4.924356737e-07,-1.843208209e-07) k = 0 l = 2 M2 = 194248.8093 t = (-157448.3578,0)
+ Diag = (-1.67252674e-07,-4.427768127e-08) k = 1 l = 0 M2 = 194248.8093 t = (-157448.3578,0)
+ Diag = (0.02194216044,10.16796104) k = 1 l = 1 M2 = 194248.8093 t = (-157448.3578,0)
+ Diag = (1.211906338e-06,5.557503107e-07) k = 1 l = 2 M2 = 194248.8093 t = (-157448.3578,0)
+ Diag = (2.401873428e-07,-5.7816854e-08) k = 2 l = 0 M2 = 194248.8093 t = (-157448.3578,0)
+ Diag = (-1.073874771e-07,7.647422686e-07) k = 2 l = 1 M2 = 194248.8093 t = (-157448.3578,0)
+ Diag = (6.595055054,10.20851866) k = 2 l = 2 M2 = 194248.8093 t = (-157448.3578,0)
+Thanks for using LHAPDF 6.4.0. Please make sure to cite the paper:
+  Eur.Phys.J. C75 (2015) 3, 132  (http://arxiv.org/abs/1412.7420)

@@ -1,0 +1,327 @@
+MODULE genps_nbody
+  ! This is a phase space generator for 2 -> n body with a fixed invariant mass
+  ! of final n particles
+  ! the momenta will be in the center of the mass frame of the intial state
+  ! This code is originally from HELAC-Onia (1212.5293,1507.03435)
+  ! Author: Hua-Sheng Shao (LPTHE)
+  ! Time: 22 June 2023
+  ! Contact: huasheng.shao@lpthe.jussieu.fr
+  USE Func_PSI
+  IMPLICIT NONE
+CONTAINS
+  ! this represents the 2->n body phase space (no flux factor)
+  ! with fixed s12=Q**2
+  SUBROUTINE generate_mom(n,Q,mass,x,p,jac)
+    IMPLICIT NONE    
+    INTEGER,INTENT(IN)::n ! number of final particles
+    REAL(KIND(1d0)),INTENT(IN)::Q ! invariant mass of the final system
+    REAL(KIND(1d0)),DIMENSION(n),INTENT(IN)::mass ! the masses of the final particles
+                                       ! the masses of the initial particles are zero
+    REAL(KIND(1d0)),DIMENSION(3*(n-1)),INTENT(IN)::x ! random numbers between 0 to 1
+    REAL(KIND(1d0)),DIMENSION(n+2,0:3),INTENT(OUT)::p ! momenta of the external particles
+    REAL(KIND(1d0)),INTENT(OUT)::jac ! the jacobi
+    INTEGER::i,k
+    REAL(KIND(1d0))::mtot,mres,QQ,mi,mti
+    REAL(KIND(1d0))::phi0,pt0,y0,phi,pti,yi,yn
+    REAL(KIND(1d0))::jactemp
+    REAL(KIND(1d0)),DIMENSION(4)::pmom
+    LOGICAL::lflag
+    REAL(KIND(1d0))::rlogmax,rlogmin
+    REAL(KIND(1d0))::mtnm1,ynm1
+    
+    mtot=0d0
+    DO i=1,n
+       mtot=mtot+mass(i)
+    ENDDO
+    IF(mtot.GE.Q)THEN
+       WRITE(*,*)"ERROR: Q is below the mass threshold"
+       STOP
+    ENDIF
+    jac=1d0
+    ! the momenta of initial particles
+    p(1,1:2)=0d0
+    p(1,3)=Q/2d0
+    p(1,0)=Q/2d0
+    p(2,1:2)=0d0
+    p(2,3)=-Q/2d0
+    p(2,0)=Q/2d0
+    pmom(1:3)=0d0
+    pmom(4)=Q
+    rlogmax=Q
+    rlogmin=Q
+    k=1
+    mres=mtot
+    DO i=1,n-1
+       QQ=scalarproduction2(pmom(1:4))
+       mi=mass(i)
+       mres=mres-mi
+       phi0=ph42(pmom)
+       pt0=transverse2(pmom)
+       y0=rapidity2(pmom)
+       ! we take the first phi as trivial
+       ! generate phi
+       IF(i.EQ.3)THEN
+          jactemp=2d0*pi
+          phi=jactemp*x(k)
+          k=k+1
+          lflag=.TRUE.
+       ELSE
+          CALL generate_phi(1,QQ,mi,mres,phi0,pt0,x(k),phi,jactemp,lflag)
+          k=k+1
+       ENDIF
+       IF(.NOT.lflag)THEN
+          jac=0d0
+          RETURN
+       ENDIF
+       jac=jac*jactemp
+       ! generate pt
+       CALL generate_pt(QQ,mi,mres,phi0,phi,pt0,x(k),0d0,pti,jactemp,lflag)
+       k=k+1
+       IF(.NOT.lflag)THEN
+          jac=0d0
+          RETURN
+       ENDIF
+       jac=jac*jactemp*2d0*pti ! from d pti^2 -> d pti
+       ! generate yi
+       IF(i.NE.n-1)THEN
+          CALL generate_yi(QQ,mi,mres,phi0,phi,pt0,pti,y0,x(k),30d0,-30d0,&
+               yi,jactemp,lflag)
+       ELSE
+          CALL assign_ynm1(QQ,mi,mres,phi0,phi,pt0,pti,y0,x(k),30d0,-30d0,&
+               yi,jactemp,lflag)
+       ENDIF
+       k=k+1
+       IF(.NOT.lflag)THEN
+          jac=0d0
+          RETURN
+       ENDIF
+       jac=jac*jactemp
+       ! momentum assignment
+       mti=DSQRT(mi**2+pti**2)
+       p(2+i,0)=mti*DCOSH(yi)
+       p(2+i,3)=mti*DSINH(yi)
+       p(2+i,1)=pti*DCOS(phi)
+       p(2+i,2)=pti*DSIN(phi)
+       pmom(1:3)=pmom(1:3)-p(2+i,1:3)
+       pmom(4)=pmom(4)-p(2+i,0)
+       rlogmax=rlogmax-mti*DEXP(yi)
+       rlogmin=rlogmin-mti*DEXP(-yi)
+       IF(i.EQ.n-1)THEN
+          mtnm1=mti
+          ynm1=yi
+       ENDIF
+    ENDDO
+    
+    ! generate yn
+    IF(rlogmax.LE.0d0.OR.rlogmin.LE.0d0)THEN
+       jac=0d0
+       RETURN
+    ENDIF
+    pti=transverse2(pmom)
+    mi=mass(n)
+    mti=DSQRT(pti**2+mi**2)
+    rlogmax=DLOG(rlogmax/mti)
+    rlogmin=-DLOG(rlogmin/mti)
+    yn=rlogmax
+    ! weight for 1/ABS(Det({{dxp1/dynm1,dxp1/dyn},{dxp2/dynm1,dxp2/dyn}}))
+    ! a factor of 2 is comming from SIGN(1d0,r-0.5d0)=(2*theta(r)-1)
+    jac=jac*Q**2/(mti*mtnm1*ABS(DSINH(ynm1-yn)))
+    ! for the n-th final particle
+    p(2+n,0:3)=p(1,0:3)+p(2,0:3)
+    DO i=1,n-1
+       p(2+n,0)=p(2+n,0)-p(2+i,0)
+       p(2+n,1)=p(2+n,1)-p(2+i,1)
+       p(2+n,2)=p(2+n,2)-p(2+i,2)
+       p(2+n,3)=p(2+n,3)-p(2+i,3)
+    ENDDO
+    jac=jac/(2d0*(4d0*pi)**(2*n-3)*(2d0*pi)**(n-1)*Q**2)
+    RETURN
+    
+  END SUBROUTINE generate_mom
+
+  SUBROUTINE assign_ynm1(Q,mi,mres,phi0,phi,pt,pti,y0,xr,ycmax,ycmin,&
+       yi,wgt,lflag)
+    ! assign yi for i=n-1, Q -> ki+Q2, mres<Q2<(Q-mi) and Q2=mn**2
+    IMPLICIT NONE
+    REAL(KIND(1d0)),INTENT(IN)::Q,mi,mres,phi0,phi,pt,pti,y0,xr,ycmax,ycmin
+    REAL(KIND(1d0)),INTENT(OUT)::yi,wgt
+    LOGICAL,INTENT(OUT)::lflag
+    REAL(KIND(1d0))::lh,mti,ymin,ymax,ypmin,ypmax,ymmin,ymmax
+    lflag=.TRUE.
+    mti=DSQRT(mi**2+pti**2)
+    IF(mti.LE.0d0)THEN
+       lflag=.FALSE.
+       yi=0d0
+       wgt=0d0
+       RETURN
+    ENDIF
+    lh=Q**2+mi**2-mres**2+2d0*pt*pti*DCOS(phi-phi0)
+    lh=lh/(2d0*DSQRT(Q**2+pt**2)*mti)
+    IF(lh.LT.1d0)THEN
+       lflag=.FALSE.
+       yi=0d0
+       wgt=0d0
+       RETURN
+    ENDIF
+    ymin=ACosh_p(lh)
+    yi=SIGN(1d0,xr-0.5d0)*ymin+y0
+    wgt=1d0
+    RETURN
+  END SUBROUTINE ASSIGN_YNM1
+
+  SUBROUTINE generate_phi(itype,Q,mi,mres,phi0,pt,xr,phi,wgt,lflag)
+    IMPLICIT NONE
+    INTEGER,INTENT(IN)::itype
+    REAL(KIND(1d0)),INTENT(IN)::Q,pt,mi,mres,phi0,xr
+    REAL(KIND(1d0)),INTENT(OUT)::phi,wgt
+    LOGICAL,INTENT(OUT)::lflag
+    REAL(KIND(1d0)),PARAMETER::pi=3.141592653589793d0
+    REAL(KIND(1d0))::cosphimin,acos1,acos2
+    lflag=.TRUE.
+    IF(Q-mi-mres.LT.0d0)THEN
+       lflag=.FALSE.
+       wgt=0d0
+       phi=0d0
+       RETURN
+    ENDIF
+    IF(itype.EQ.0)THEN
+       ! i<n-1, Q -> ki+Q2, mres<Q2<(Q-mi)
+       IF(mi*pt.LE.0d0)THEN
+          wgt=2d0*pi
+          phi=wgt*xr
+       ELSE
+          cosphimin=((Q-mi)**2-mres**2)*Q/(2d0*mi*pt**2)
+          IF(cosphimin.GT.2d0)THEN
+             wgt=2d0*pi
+             phi=wgt*xr
+          ELSE
+             cosphimin=1d0-cosphimin
+             wgt=DACOS(cosphimin)
+             phi=wgt*(2d0*xr-1d0)+phi0
+             wgt=2d0*wgt
+          ENDIF
+       ENDIF
+    ELSEIF(itype.EQ.1)THEN
+       ! i=n-1, Q -> kn-1+kn, mres =mn
+       IF(pt*mi.LE.0d0)THEN
+          wgt=2d0*pi
+          phi=wgt*xr
+       ELSE
+          cosphimin=DMAX1(-lamda_func(Q**2+pt**2,mi**2,&
+               mres**2+pt**2)/(4d0*mi**2*pt**2),0d0)
+          cosphimin=DSQRT(cosphimin)
+          IF(cosphimin.GT.1d0)cosphimin=1d0
+          acos1=DACOS(cosphimin)
+          acos2=DACOS(-cosphimin)
+          phi=unit_step(0.5d0-xr)*(4d0*acos1*xr-acos1)&
+               +unit_step(xr-0.5d0)*(2d0*(pi-acos2)*(2d0*xr-1d0)+acos2)+phi0
+          wgt=unit_step(0.5d0-xr)*(4d0*acos1)&
+               +unit_step(xr-0.5d0)*(4d0*(pi-acos2))
+       ENDIF
+    ELSE
+       WRITE(*,*)"Wrong itype(0 or 1) in generate_phi ",itype
+       STOP
+    ENDIF
+    RETURN
+  END SUBROUTINE generate_phi
+
+  SUBROUTINE generate_pt(Q,mi,mres,phi0,phi,pt,xr,ptc,pti,wgt,lflag)
+    IMPLICIT NONE
+    REAL(KIND(1d0)),INTENT(IN)::Q,pt,mi,mres,phi0,phi,xr,ptc ! ptc is the pt cut
+    REAL(KIND(1d0)),INTENT(OUT)::pti,wgt
+    LOGICAL,INTENT(OUT)::lflag
+    REAL(KIND(1d0))::a,b,c,cosphi,delta,ptmax,ptmin
+    lflag=.TRUE.
+    cosphi=DCOS(phi-phi0)
+    a=4d0*(Q**2+pt**2-cosphi**2*pt**2)
+    b=-4d0*cosphi*pt*(Q**2+mi**2-mres**2)
+    c=-lamda_func(Q**2+pt**2,mi**2,mres**2+pt**2)
+    delta=b**2-4d0*a*c
+    IF(delta.LT.0d0)THEN
+       lflag=.FALSE.
+       pti=0d0
+       wgt=0d0
+       RETURN
+    ENDIF
+    ptmax=(-b+DSQRT(delta))/(2d0*a)
+    ptmin=DMAX1((-b-DSQRT(delta))/(2d0*a),0d0)
+    ptmin=DMAX1(ptmin,ptc) ! cut impose
+    IF(ptmax.LT.ptmin)THEN
+       lflag=.FALSE.
+       pti=0d0
+       wgt=0d0
+       RETURN
+    ENDIF
+    wgt=ptmax-ptmin
+    pti=wgt*xr+ptmin
+    RETURN
+  END SUBROUTINE generate_pt
+
+  SUBROUTINE generate_yi(Q,mi,mres,phi0,phi,pt,pti,y0,xr,ycmax,ycmin,&
+       yi,wgt,lflag)
+    ! generate yi for i<=n-1, Q -> ki+Q2, mres<Q2<(Q-mi) and Q2=mn**2
+    IMPLICIT NONE
+    REAL(KIND(1d0)),INTENT(IN)::Q,mi,mres,phi0,phi,pt,pti,y0,xr,ycmax,ycmin
+    REAL(KIND(1d0)),INTENT(OUT)::yi,wgt
+    LOGICAL,INTENT(OUT)::lflag
+    REAL(KIND(1d0))::lh,mti,ymin,ymax,ypmin,ypmax,ymmin,ymmax
+    lflag=.TRUE.
+    mti=DSQRT(mi**2+pti**2)
+    IF(mti.LE.0d0)THEN
+       lflag=.FALSE.
+       yi=0d0
+       wgt=0d0
+       RETURN
+    ENDIF
+    lh=Q**2+mi**2-mres**2+2d0*pt*pti*DCOS(phi-phi0)
+    lh=lh/(2d0*DSQRT(Q**2+pt**2)*mti)
+    IF(lh.LT.1d0)THEN
+       lflag=.FALSE.
+       yi=0d0
+       wgt=0d0
+       RETURN
+    ENDIF
+    ymin=ACosh_p(lh)
+    ymax=ymin+y0
+    ymin=-ymin+y0
+    ymax=MIN(ymax,ycmax)
+    ymin=MAX(ymin,ycmin)
+    IF(ymax.LT.ymin)THEN
+       lflag=.FALSE.
+       yi=0d0
+       wgt=0d0
+       RETURN
+    ENDIF
+    wgt=ymax-ymin
+    yi=wgt*xr+ymin
+    RETURN
+  END SUBROUTINE GENERATE_YI
+
+  SUBROUTINE generate_yn(rlogmax,rlogmin,xr,ycmax,ycmin,yn,wgt,lflag)
+    ! generate yn for Q -> kn-1,kn within rlogmin<yn<rlogmax
+    IMPLICIT NONE
+    REAL(KIND(1d0)),INTENT(IN)::rlogmax,rlogmin,xr,ycmax,ycmin ! ycmax,ycmin is the cut of yn
+    REAL(KIND(1d0)),INTENT(OUT)::yn,wgt
+    LOGICAL,INTENT(OUT)::lflag
+    REAL(KIND(1d0))::ypmin,ypmax,ymmin,ymmax
+    lflag=.TRUE.
+    IF(rlogmax.LT.rlogmin.OR.ycmax.LT.ycmin)THEN
+       lflag=.FALSE.
+       yn=0d0
+       wgt=0d0
+       RETURN
+    ENDIF
+    ypmin=DMAX1(rlogmin,ycmin)
+    ypmax=DMIN1(rlogmax,ycmax)
+    IF(ypmin.GT.ypmax)THEN
+       lflag=.FALSE.
+       yn=0d0
+       wgt=0d0
+       RETURN
+    ENDIF
+    wgt=ypmax-ypmin
+    yn=wgt*xr+ypmin
+    RETURN
+  END SUBROUTINE generate_yn
+
+END MODULE genps_nbody

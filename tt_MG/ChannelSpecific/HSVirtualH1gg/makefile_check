@@ -1,0 +1,20 @@
+FC=gfortran-mp-10
+
+objs=Func_PSI.o use_func.o hardfuncs.o check.o
+
+all: check
+
+check: $(objs)
+	$(FC) $(FFLAGS) -o $@ $(objs) $(FFLIBS)
+
+.f.o:
+	$(FC) $(FFLAGS) -c $*.f
+
+use_func.o use_func.mod: use_func.f90
+	$(FC) $(FFLAGS) -c $<
+
+Func_PSI.o Func_PSI.mod: Func_PSI.f90 use_func.mod
+	$(FC) $(FFLAGS) -c $<
+
+clean:
+	rm *.o *~ *.mod check
